@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>员工列表</h1>
+<a href="{{ url_for('main.add_employee') }}" class="btn btn-primary mb-3">添加员工</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>邮箱</th>
+            <th>电话</th>
+            <th>部门</th>
+            <th>职位</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.phone }}</td>
+            <td>{{ employee.department.name }}</td>
+            <td>{{ employee.position.title }}</td>
+            <td>
+                <a href="{{ url_for('main.edit_employee', id=employee.id) }}" class="btn btn-sm btn-warning">编辑</a>
+                <a href="{{ url_for('main.delete_employee', id=employee.id) }}" class="btn btn-sm btn-danger" onclick="return confirm('确定要删除这个员工吗？')">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %} 

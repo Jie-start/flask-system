@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container h-100">
+    <div class="row align-items-center justify-content-center" style="min-height: calc(100vh - 100px);">
+        <div class="col-md-10 text-center">
+            <div class="welcome-section">
+                <h1 class="display-5 mb-3">欢迎使用员工管理系统</h1>
+                <p class="lead text-muted mb-4">高效的企业人力资源管理平台</p>
+                
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body py-3">
+                                <i class="bi bi-people text-primary" style="font-size: 1.8rem;"></i>
+                                <h5 class="card-title mt-2 mb-1">员工管理</h5>
+                                <p class="card-text text-muted small mb-2">管理公司所有员工信息</p>
+                                <a href="{{ url_for('main.list_employees') }}" class="btn btn-sm btn-outline-primary">查看员工</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body py-3">
+                                <i class="bi bi-building text-success" style="font-size: 1.8rem;"></i>
+                                <h5 class="card-title mt-2 mb-1">部门管理</h5>
+                                <p class="card-text text-muted small mb-2">管理公司部门架构</p>
+                                <a href="{{ url_for('main.list_departments') }}" class="btn btn-sm btn-outline-success">查看部门</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body py-3">
+                                <i class="bi bi-cash-stack text-warning" style="font-size: 1.8rem;"></i>
+                                <h5 class="card-title mt-2 mb-1">薪资管理</h5>
+                                <p class="card-text text-muted small mb-2">管理员工薪资信息</p>
+                                <a href="{{ url_for('main.list_salaries') }}" class="btn btn-sm btn-outline-warning">查看薪资</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3 mt-1 justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body py-3">
+                                <i class="bi bi-calendar-check text-info" style="font-size: 1.8rem;"></i>
+                                <h5 class="card-title mt-2 mb-1">考勤管理</h5>
+                                <p class="card-text text-muted small mb-2">管理员工考勤记录</p>
+                                <a href="{{ url_for('main.list_attendance') }}" class="btn btn-sm btn-outline-info">查看考勤</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body py-3">
+                                <i class="bi bi-person-badge text-danger" style="font-size: 1.8rem;"></i>
+                                <h5 class="card-title mt-2 mb-1">职位管理</h5>
+                                <p class="card-text text-muted small mb-2">管理公司职位体系</p>
+                                <a href="{{ url_for('main.list_positions') }}" class="btn btn-sm btn-outline-danger">查看职位</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .welcome-section {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+    }
+    
+    .card {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .display-5 {
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .card-body {
+        text-align: center;
+    }
+    
+    .btn-outline-primary:hover,
+    .btn-outline-success:hover,
+    .btn-outline-warning:hover,
+    .btn-outline-info:hover,
+    .btn-outline-danger:hover {
+        color: white;
+    }
+</style>
+{% endblock %} 
