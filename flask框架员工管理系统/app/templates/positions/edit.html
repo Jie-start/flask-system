@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>编辑职位</h1>
+    <div class="card">
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">职位名称</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ position.title }}" required>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">保存</button>
+                    <a href="{{ url_for('main.list_positions') }}" class="btn btn-secondary">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %} 

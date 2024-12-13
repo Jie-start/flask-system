@@ -1,0 +1,37 @@
+Department（部门表）
+| 字段名 | 描述 | 数据类型 | 主键 | 备注 |
+|--------|------|----------|------|------|
+| id | 部门ID | INTEGER | 是 | 自增主键 |
+| name | 部门名称 | VARCHAR(50) | 否 | 不可为空 |
+
+Position（职位表）
+| 字段名 | 描述 | 数据类型 | 主键 | 备注 |
+|--------|------|----------|------|------|
+| id | 职位ID | INTEGER | 是 | 自增主键 |
+| title | 职位名称 | VARCHAR(50) | 否 | 不可为空 |
+
+Employee（员工表）
+| 字段名 | 描述 | 数据类型 | 主键 | 备注 |
+|--------|------|----------|------|------|
+| id | 员工ID | INTEGER | 是 | 自增主键 |
+| name | 姓名 | VARCHAR(100) | 否 | 不可为空 |
+| email | 邮箱 | VARCHAR(120) | 否 | 唯一，不可为空 |
+| phone | 电话 | VARCHAR(20) | 否 | 可为空 |
+| hire_date | 入职日期 | DATE | 否 | 不可为空 |
+| department_id | 部门ID | INTEGER | 否 | 外键关联department表 |
+| position_id | 职位ID | INTEGER | 否 | 外键关联position表 |
+
+SalaryRecord（薪资记录表）
+| 字段名 | 描述 | 数据类型 | 主键 | 备注 |
+|--------|------|----------|------|------|| id | 记录ID | INTEGER | 是 | 自增主键 |
+| employee_id | 员工ID | INTEGER | 否 | 外键关联employee表 |
+| amount | 薪资金额 | FLOAT | 否 | 不可为空 |
+| date | 发放日期 | DATE | 否 | 不可为空 |
+
+AttendanceRecord（考勤记录表）
+| 字段名 | 描述 | 数据类型 | 主键 | 备注 |
+|--------|------|----------|------|------|
+| id | 记录ID | INTEGER | 是 | 自增主键 |
+| employee_id | 员工ID | INTEGER | 否 | 外键关联employee表 |
+| date | 考勤日期 | DATE | 否 | 不可为空 |
+| status | 考勤状态 | VARCHAR(20) | 否 | 不可为空，值包括：present(出勤)、absent(缺勤)、late(迟到) |
